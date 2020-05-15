@@ -4,16 +4,15 @@
 .home {
 
 	.jumbotron {
-		background-image: url('eat3.jpg');
-		background-position: bottom center;
+		background-image: url('main-banner.jpg');
+		background-position: center center;
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: auto 100%;;
 		height:500px;
 
 		.title {
 			color: white;
 		}
-	
 	}
 
 	.food {
@@ -23,12 +22,13 @@
 	}
 }
 
-.search {
+.results {
 	.jumbotron {
 		background-image: url('results-banner.jpg');
-		background-size: cover;
+		background-size: auto 100%;
 		background-position: center center;
-		height: 400px;
+		background-repeat: no-repeat;
+		height: 500px;
 	}
 
 	.result {
@@ -36,4 +36,5 @@
 		border: white;
 		border-radius: 5px;
 	}
+
 }
