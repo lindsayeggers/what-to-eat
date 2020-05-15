@@ -1,0 +1,31 @@
+<div class="search">
+	<div class="text-center">
+		<div class="banner container">
+			<div class="jumbotron">
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="result d-flex flex-column justify-content-center">
+				<% if @eatHere %>
+					<div class="pt-5">
+						<strong><%= @eatHere["venue"]["name"] %></strong><br>
+						<%= @eatHere["venue"]["location"]["address"] %><br>
+						<%= @eatHere["venue"]["location"]["city"] %>
+						<%= @eatHere["venue"]["location"]["state"] %>
+						<% if @eatHere["venue"]["url"] %>
+							<%= @eatHere["venue"]["url"] %>
+						<% end %> 
+					</div>
+				<% else %>
+					<div class="pt-5">
+						<h2>Oops, something went wrong. Try again later.</h2>
+					</div>
+				<% end %>
+				<div class="pt-3 pb-5">
+					<%= link_to "meehhhh", "", :class=> "btn btn-info" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
