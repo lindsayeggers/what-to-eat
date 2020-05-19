@@ -1,0 +1,31 @@
+<div class="results text-center">
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid">
+		</div>
+	</div>
+	<div class="container">
+		<div class="result d-flex flex-column justify-content-center">
+			<% if @eatHere %>
+				<div class="pt-5">
+					<strong><%= @eatHere["name"] %></strong><br>
+					<%= @eatHere["address"] %><br>
+					<%= @eatHere["city"] %>
+					<%= @eatHere["state"] %>
+					<%= @eatHere["zipCode"] %>
+					<% if @eatHere["website"] %>
+						<%= @eatHere["website"] %>
+					<% end %> 
+				</div>
+			<% else %>
+				<div class="pt-5">
+					<h2>Oops, something went wrong. Try again later...</h2>
+				</div>
+			<% end %>
+			<div class="pt-3 pb-5">
+				<%= form_tag reload_path, method: :get do %>
+					<%= submit_tag "meehhh" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,5 +1,5 @@
 <div class="results text-center">
-<div class="container">
+	<div class="container">
 		<div class="jumbotron jumbotron-fluid">
 		</div>
 	</div>
@@ -7,12 +7,13 @@
 		<div class="result d-flex flex-column justify-content-center">
 			<% if @eatHere %>
 				<div class="pt-5">
-					<strong><%= @eatHere["venue"]["name"] %></strong><br>
-					<%= @eatHere["venue"]["location"]["address"] %><br>
-					<%= @eatHere["venue"]["location"]["city"] %>
-					<%= @eatHere["venue"]["location"]["state"] %>
-					<% if @eatHere["venue"]["url"] %>
-						<%= @eatHere["venue"]["url"] %>
+					<strong><%= @eatHere["name"] %></strong><br>
+					<%= @eatHere["address"] %><br>
+					<%= @eatHere["city"] %>
+					<%= @eatHere["state"] %>
+					<%= @eatHere["zipCode"] %>
+					<% if @eatHere["website"] %>
+						<%= @eatHere["website"] %>
 					<% end %> 
 				</div>
 			<% else %>
@@ -21,7 +22,9 @@
 				</div>
 			<% end %>
 			<div class="pt-3 pb-5">
-				<%= link_to "meehhhh", "", :class=> "btn btn-info" %>
+				<%= form_tag reload_path, method: :get do %>
+					<%= submit_tag "meehhh" %>
+				<% end %>
 			</div>
 		</div>
 	</div>

@@ -1,12 +1,13 @@
 <div class="home">
+	<img src="../../assets/images/restaurant.jpg">
 	<div class="container px-0">
 		<div class="jumbotron jumbotron-fluid pt-0">
 			<h1 class="display-4 text-center text-white">what should i</h1>
 		</div>
 	</div>
 	<div class="container food text-center">
-		<%=form_tag search_path, method: :get, :class=>"form-inline justify-content-center pt-5 pb-5" do %>
-			<%=text_field_tag :search, nil, placeholder: "Ex. Cleveland, OH", :class=>"form-control mr-3" %>
+		<%=form_tag '/result', method: :post, :class=>"form-inline justify-content-center pt-5 pb-5" do %>
+			<%=text_field_tag :location, nil, placeholder: "Ex. Cleveland, OH", :class=>"form-control mr-3" %>
 			<%= submit_tag 'Search', :class=>" btn btn-info" %>
 		<% end %>
 	</div>
