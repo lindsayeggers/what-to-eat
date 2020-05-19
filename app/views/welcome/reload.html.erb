@@ -9,12 +9,10 @@
 				<div class="pt-5">
 					<strong><%= @eatHere["name"] %></strong><br>
 					<%= @eatHere["address"] %><br>
-					<%= @eatHere["city"] %>
+					<%= "#{@eatHere["city"]}, " %>
 					<%= @eatHere["state"] %>
 					<%= @eatHere["zipCode"] %>
-					<% if @eatHere["website"] %>
-						<%= @eatHere["website"] %>
-					<% end %> 
+					<%= @eatHere["website"] %>
 				</div>
 			<% else %>
 				<div class="pt-5">
