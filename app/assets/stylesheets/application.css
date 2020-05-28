@@ -14,10 +14,11 @@
  *= require_self
  */
 body {
-    background-color: #e9ecef;
+  background-color: #e9ecef;
 }
 
-#navbar-logo {
+.navbar-logo {
 	height: 20px;
 	width: 20px;
 }
+
