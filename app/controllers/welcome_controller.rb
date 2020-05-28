@@ -5,8 +5,7 @@ class WelcomeController < ApplicationController
 
 	def result
 		Restaurant.delete_all
-		Restaurant.get_restaurants(params[:location])
-		@eatHere = Restaurant.get_random_restaurant()
+		@eatHere = Restaurant.get_restaurants(params[:location])
 	end
 
 	def reload
