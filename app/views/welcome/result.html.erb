@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="result d-flex flex-column justify-content-center">
 			<% if @eatHere %>
-				<div class="pt-5">
+				<div class="restaurant-info pt-4">
 					<strong><%= @eatHere["name"] %></strong><br>
 					<%= @eatHere["address"] %><br>
 					<%= "#{@eatHere["city"]}, " %>
@@ -14,16 +14,17 @@
 					<%= @eatHere["zipCode"] %><br>
 					<%= @eatHere["website"] %>
 				</div>
+				<div class="pt-3 pb-4">
+					<%= form_tag reload_path, method: :get do %>
+						<%= submit_tag "meehhh", class: "btn btn-info" %>
+					<% end %>
+				</div>
 			<% else %>
-				<div class="pt-5">
+				<div class="pt-5 pb-4">
 					<h2>Oops, something went wrong. Try again later...</h2>
+					<%= link_to "Search Again", root_path, class: "btn btn-info mt-3" %>
 				</div>
 			<% end %>
-			<div class="pt-3 pb-5">
-				<%= form_tag reload_path, method: :get do %>
-					<%= submit_tag "meehhh" %>
-				<% end %>
-			</div>
 		</div>
 	</div>
 </div>
