@@ -5,9 +5,6 @@
 		</div>
 	</div>
 	<div class="container food text-center">
-		<%=form_tag '/result', method: :get, :class=>"form-inline justify-content-center pt-5 pb-5" do %>
-			<%=text_field_tag :location, nil, placeholder: "Ex. Cleveland, OH", :class=>"form-control mr-3" %>
-			<%= submit_tag 'Search', :class=>" btn btn-info" %>
-		<% end %>
+		<%= render 'search' %>
 	</div>
 </div>
