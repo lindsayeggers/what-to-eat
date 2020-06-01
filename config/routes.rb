@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   resources :welcome
   root 'welcome#index'
 	get '/result' => 'welcome#result'
-	get '/reload' => 'welcome#reload'
 end

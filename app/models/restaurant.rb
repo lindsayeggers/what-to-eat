@@ -14,13 +14,5 @@ class Restaurant < ApplicationRecord
 			}
 		end
 		Restaurant.import(results)
-		get_random_restaurant()
 	end
-
-	def self.get_random_restaurant
-		restaurants = Restaurant.all
-		randomNum = rand(restaurants.length() - 1)
-		restaurants[randomNum]
-	end
-	
 end
