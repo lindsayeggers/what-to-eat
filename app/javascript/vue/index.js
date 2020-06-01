@@ -2,20 +2,22 @@ import Vue from "vue/dist/vue.esm.js"
 
 Vue.component("v-result", {
   props: {
-		restaurants: Array,
-		eatHere: Object
+		restaurants: Array
 	},
 	data() {
 		return {
-			restaurant: this.eatHere
+			restaurant: {}
 		}
 	},
 	methods: {
-		newResult() {
+		getRestaurant() {
 			let numOfResults = this.restaurants.length
 			let randomNum = Math.floor(Math.random() * numOfResults)
 			return this.restaurant = this.restaurants[randomNum]
 		}
+	},
+	created() {
+		this.getRestaurant();
 	}
 })
 

@@ -1,36 +1,23 @@
-<v-result :eat-here="<%= @eatHere.to_json %>" :restaurants="<%= @restaurants.to_json %>" inline-template>
+<v-result :restaurants="<%= @restaurants.to_json %>" inline-template>
 	<div class="results text-center">
 		<div class="container">
 			<div class="jumbotron jumbotron-fluid">
 			</div>
 		</div>
 		<div class="container">
-			<div class="result d-flex flex-column justify-content-center">
-				<% if @eatHere %>
-					<div class="restaurant-info pt-4">
-						<div v-text="restaurant.name" class="font-weight-bold"></div>
-						<div v-text="restaurant.address"></div>
-						<div v-text="restaurant.city"></div>
-						<div v-text="restaurant.state"></div>
+			<div class="result">
+				<div class="restaurant-info pt-4">
+					<div v-text="restaurant.name" class="font-weight-bold"></div>
+					<div v-text="restaurant.address"></div>
+					<div class="d-inline-flex">
+						<div v-text="restaurant.city" class="pr-1"></div>
+						<div v-text="restaurant.state" class="pr-1"></div>
 						<div v-text="restaurant.zipCode"></div>
-						<%# <strong><%= @eatHere["name"] </strong><br>
-						<%= @eatHere["address"] <br>
-						<%= "#{@eatHere["city"]}, " 
-						<%= @eatHere["state"] 
-						<%= @eatHere["zipCode"] <br>
-						<%= link_to "#{@eatHere["website"]}", @eatHere["website"], :target => "_blank" %> 
 					</div>
-					<div class="pt-3 pb-4">
-						<button @click=newResult() class="btn btn-info">meeeehh</button>
-						<%# <%= form_tag reload_path, method: :get do 	
-							<%= submit_tag "meehhh", class: "btn 	btn-info" 
-						<% end %> 
-					</div>
-				<% else %>
-					<div class="pt-5 pb-4">
-						<%= render 'noResult' %>
-					</div>
-				<% end %>
+				</div>
+				<div class="pt-3 pb-4">
+					<button @click=getRestaurant() class="btn btn-info">meeeehh</button>
+				</div>
 			</div>
 		</div>
 	</div>
