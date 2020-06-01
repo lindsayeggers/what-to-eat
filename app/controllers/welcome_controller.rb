@@ -7,8 +7,9 @@ class WelcomeController < ApplicationController
 		begin
 			Restaurant.delete_all
 			@eatHere = Restaurant.get_restaurants(params[:location])
+			@restaurants = Restaurant.all
 		rescue
-			redirect_to root_path, alert: "No restaurants found. Please try again."
+			redirect_to root_path, notice: "Oops, something went wrong. Try again later..."
 		end
 	end
 
