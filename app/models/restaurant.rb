@@ -14,7 +14,7 @@ class Restaurant < ApplicationRecord
 			}
 		end
 		Restaurant.import(results)
-		get_random_restaurant
+		get_random_restaurant()
 	end
 
 	def self.get_random_restaurant
