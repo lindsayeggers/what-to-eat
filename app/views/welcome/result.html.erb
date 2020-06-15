@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="result">
 				<div class="restaurant-info pt-4">
-					<div v-text="restaurant.name" class="font-weight-bold"></div>
+					<strong><div v-text="restaurant.name"></div></strong>
 					<div v-text="restaurant.address"></div>
 					<div class="d-inline-flex">
 						<div v-text="restaurant.city" class="pr-1"></div>
@@ -15,8 +15,11 @@
 						<div v-text="restaurant.zipCode"></div>
 					</div>
 				</div>
+				<div>
+					<a :href="directionsURL" target="_blank">Get Directions</a>
+				</div>
 				<div class="pt-3 pb-4">
-					<button @click=getRestaurant() class="btn btn-info">meeeehh</button>
+					<button @click=getRestaurant() class="btn btn-info btn-lg">meeeehh</button>
 				</div>
 			</div>
 		</div>

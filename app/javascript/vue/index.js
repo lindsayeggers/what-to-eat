@@ -9,6 +9,17 @@ Vue.component("v-result", {
 			restaurant: {}
 		}
 	},
+	computed: {
+		encodedAddress() {
+			if (this.restaurant.address) {
+				return encodeURI(`${this.restaurant.address} ${this.restaurant.city} ${this.restaurant.state}`)
+			}
+			return encodeURI(this.restaurant.name)
+		},
+		directionsURL() {
+			return `https://www.google.com/maps/dir/?api=1&destination=${this.encodedAddress}`
+		}
+	},
 	methods: {
 		getRestaurant() {
 			let numOfResults = this.restaurants.length
