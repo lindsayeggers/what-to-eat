@@ -5,7 +5,9 @@
 		</div>
 	</div>
 	<div class="container food text-center">
-		<h4 id="notice"><%= notice %></h4>
+		<% if notice %>
+			<h4 id="notice" class="pt-5"><%= notice %></h4>
+		<% end %>
 		<%= render 'search' %>
 	</div>
 </div>
