@@ -6,6 +6,7 @@ Vue.component("v-result", {
 	},
 	data() {
 		return {
+			randIndexes: [],
 			restaurant: {}
 		}
 	},
@@ -29,13 +30,27 @@ Vue.component("v-result", {
 		}
 	},
 	methods: {
+		getRandomNumArray() {
+			let randArr = []
+			let totalResults = this.restaurants.length
+			while(randArr.length < totalResults) {
+				let randNum = Math.floor(Math.random() *totalResults )
+				if (!randArr.includes(randNum)) {
+					randArr.push(randNum)
+				}
+			}
+			return this.randIndexes = randArr
+		},
 		getRestaurant() {
-			let numOfResults = this.restaurants.length
-			let randomNum = Math.floor(Math.random() * numOfResults)
-			return this.restaurant = this.restaurants[randomNum]
+			if (this.randIndexes.length === 0) {
+				this.getRandomNumArray()
+			}
+			let index = this.randIndexes.pop()
+			return this.restaurant = this.restaurants[index]
 		}
 	},
 	created() {
+		this.getRandomNumArray();
 		this.getRestaurant();
 	}
 })
