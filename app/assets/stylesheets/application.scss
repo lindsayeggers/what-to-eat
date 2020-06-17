@@ -58,11 +58,15 @@ body {
 	}
 
 	@media (min-width: 992px) {
-		.restaurant-image {
-			padding-right: 5em;
+		.restaurant-info {
+			.restaurant-image {
+				padding-right: 5em;
+			}
+			text-align: left;
+			padding-left: 2em;
 		}
 		.result {
-			height: 450px;
+			height: 400px;
 			.restaurant {
 				height: 300px;
 			}
