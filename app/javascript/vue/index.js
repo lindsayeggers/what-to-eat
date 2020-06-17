@@ -13,7 +13,7 @@ Vue.component("v-result", {
 	computed: {
 		encodedAddress() {
 			if (this.restaurant.address) {
-				return encodeURI(`${this.restaurant.address} ${this.restaurant.city} ${this.restaurant.state}`)
+				return `${this.restaurant.address}+${this.restaurant.city}+${this.restaurant.state}`
 			}
 			return encodeURI(this.restaurant.name)
 		},
@@ -42,7 +42,7 @@ Vue.component("v-result", {
 			return this.randIndexes = randArr
 		},
 		getRestaurant() {
-			if (this.randIndexes.length === 0) {
+			if (!this.randIndexes.length) {
 				this.getRandomNumArray()
 			}
 			let index = this.randIndexes.pop()
