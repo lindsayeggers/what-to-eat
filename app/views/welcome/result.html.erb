@@ -1,26 +1,30 @@
 <v-result :restaurants="<%= @restaurants.to_json %>" inline-template>
 	<div class="results text-center">
-		<div class="container">
+		<div class="container px-0">
 			<div class="jumbotron jumbotron-fluid">
 			</div>
 		</div>
-		<div class="container">
-			<div class="result">
-				<div class="restaurant-info pt-4">
-					<strong><div v-text="restaurant.name"></div></strong>
+		<div class="container result px-0">
+			<div class="restaurant d-lg-inline-flex justify-content-center align-items-center pt-5">
+				<div v-if="restaurant.photo" class="restaurant-image">
+					<img :src="imgSrc" alt="image of restaurant"/>
+				</div>
+				<div class="restaurant-address">
+					<strong><div v-text="restaurant.name" class="restaurant-name"></div></strong>
 					<div v-text="restaurant.address"></div>
 					<div class="d-inline-flex">
 						<div v-text="restaurant.city" class="pr-1"></div>
 						<div v-text="restaurant.state" class="pr-1"></div>
 						<div v-text="restaurant.zipCode"></div>
 					</div>
+					<a :href="directionsURL" target="_blank" class="d-block">Get Directions</a>
 				</div>
-				<div>
-					<a :href="directionsURL" target="_blank">Get Directions</a>
-				</div>
-				<div class="pt-3 pb-4">
-					<button @click=getRestaurant() class="btn btn-info btn-lg">meeeehh</button>
-				</div>
+			</div>
+			<div v-if="getReview" class="restaurant-review pt-4 px-5">
+				{{ getReview }}
+			</div>
+			<div class="pt-3 pb-5">
+				<button @click=getRestaurant() class="btn btn-info btn-lg">meeeehh</button>
 			</div>
 		</div>
 	</div>
