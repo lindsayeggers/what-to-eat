@@ -18,6 +18,14 @@ Vue.component("v-result", {
 		},
 		directionsURL() {
 			return `https://www.google.com/maps/dir/?api=1&destination=${this.encodedAddress}`
+		},
+		imgSrc() {
+			return `${this.restaurant.photo.prefix}250x250${this.restaurant.photo.suffix}`
+		},
+		getReview() {
+			if (this.restaurant.review) {
+				return `${this.restaurant.review.object.text} -${this.restaurant.review.object.user.firstName}`
+			}
 		}
 	},
 	methods: {
